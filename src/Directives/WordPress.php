@@ -511,4 +511,18 @@ return [
 
         return "<?php _e({$expression[0]}, {$expression[1]}); ?>";
     },
+
+    /*
+    |---------------------------------------------------------------------
+    | @meta
+    |---------------------------------------------------------------------
+    */
+
+    'meta' => function ($expression) {
+        
+        global $post;
+        if (! empty($expression)) {
+            return "<?= $post->{$expression}; ?>";
+        }
+    },
 ];
